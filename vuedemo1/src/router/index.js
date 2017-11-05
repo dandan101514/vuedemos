@@ -4,6 +4,7 @@ import Index from '@/components/index'
 import Loading from '@/components/loadings'
 import Dialog from '@/components/dialog'
 import List from '@/components/lists'
+import Mocks from '@/components/mocks'
 
 Vue.use(Router)
 
@@ -29,6 +30,10 @@ export default new Router({
         {
           path: 'list',
           component: List
+        },
+        {
+          path: 'mocks',
+          component: Mocks
         }
       ]
     },

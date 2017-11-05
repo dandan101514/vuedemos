@@ -8,6 +8,7 @@
           <li><router-link :to="{path:'loading'}">加载 demo</router-link></li>
           <li><router-link :to="{path:'dialog'}">弹出框 demo</router-link></li>
           <li><router-link :to="{path:'list'}">表格 demo</router-link></li>
+          <li><router-link :to="{path:'mocks'}">mock数据 demo</router-link></li>
         </ul>
       </div>
       <div class="vue_content_right">
