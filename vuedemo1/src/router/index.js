@@ -5,8 +5,6 @@ import Loading from '@/components/loadings'
 import Dialog from '@/components/dialog'
 import List from '@/components/lists'
 import Mocks from '@/components/mocks'
-import Sweetalert from '@/components/sweetalert'
-import Watch from '@/components/watch.computed'
 
 Vue.use(Router)
 
@@ -36,14 +34,6 @@ export default new Router({
         {
           path: 'mocks',
           component: Mocks
-        },
-        {
-          path: 'sweetalert',
-          component: Sweetalert
-        },
-        {
-          path: 'watch',
-          component: Watch
         }
       ]
     },
