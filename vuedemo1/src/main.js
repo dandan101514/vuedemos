@@ -8,7 +8,6 @@ import server from './server'
 import loading from './views/loading'
 import dialog from './views/dialog'
 import ElementUI from 'element-ui'
-import sweetalert from 'sweetalert'
 import 'element-ui/lib/theme-chalk/index.css'
 
 
