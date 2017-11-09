@@ -7,6 +7,7 @@ import List from '@/components/lists'
 import Mocks from '@/components/mocks'
 import Sweetalert from '@/components/sweetalert'
 import Watch from '@/components/watch.computed'
+import Propsdemo from '@/components/vue.props'
 
 Vue.use(Router)
 
@@ -44,6 +45,10 @@ export default new Router({
         {
           path: 'watch',
           component: Watch
+        },
+        {
+          path: 'props',
+          component: Propsdemo
         }
       ]
     },
