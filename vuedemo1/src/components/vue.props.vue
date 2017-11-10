@@ -2,17 +2,17 @@
   <div>
     <h1>total 父子组件传递：</h1>
     <div>
+      <h3 style="margin:20px 0;">子组件传给父组件：{{showmes}}</h3>
+      <input v-model="parentchangeinput"/>
+    </div>
+    <div>
       <h3 style="margin:20px 0;">商品单价：</h3>
       <div>
         <button class="dialog_btn" @click="clickapple">Apple 5</button>
         <button class="dialog_btn" @click="clickbanana">Banana 10</button>
         <button class="dialog_btn" @click="clickpear">Pear 15</button>
       </div>
-      <Total :price = "parentprices" :changeconten="parentchangeconten"></Total>
-    </div>
-    <div>
-      <h3>子组件 改变 父组件</h3>
-      <p>随着子组件变化：{{parentchangeconten}}</p>
+      <Total :price = "parentprices" @clickfather="fathername" :changeinput="parentchangeinput"></Total>
     </div>
   </div>
 </template>
@@ -22,7 +22,9 @@ export default {
   data () {
     return {
       parentprices:1,
-      parentchangeconten:""
+      showmes:100,
+      fatherbody:"我是父组件的内容！",
+      parentchangeinput:"sss"
     }
   },
   methods:{
@@ -34,6 +36,9 @@ export default {
     },
     clickpear:function(){
         this.parentprices = 15
+    },
+    fathername:function(){
+      this.showmes = this.showmes + 100
     }
   }
 }

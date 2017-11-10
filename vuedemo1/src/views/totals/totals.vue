@@ -1,5 +1,7 @@
 <template>
   <div class="vue_total">
+    <p>父组件传向子组件：props</p>
+    <p>子组件传向父组件：$emit</p>
     <div class="mrg">
         <button @click="clickplus" class="dialog_btn">+</button>
         <button @click="clickminus" class="dialog_btn">-</button>
@@ -10,8 +12,11 @@
         <p class="mrg">总价：<span style="color:red;">{{totals}}</span></p>
     </div>
     <div>
-        <input v-model="changeconten" placeholder="输入要改变父组件的内容"/>
-        
+        <button class="dialog_btn" @click="clickme">点击我改变父组件内容 +100</button>
+    </div>
+    <div>
+        <input v-model="changeinput"/>
+        <input v-model="changeinput2"/>
     </div>
   </div>
 </template>
@@ -19,24 +24,20 @@
 <script>
 export default {
     props: {
-        price: { type: String, default: 1 },
-        changeconten: { type: String}
+        price: { type: Number, default: 1 },
+        changeinput: { type: String }
     },
     data () {
         return {
             nums:0,
-            changeconten:""
+            changeinput:"",
+            changeinput2:""
         }
     },
     computed: {
         totals: {
             get:function () {
                 return this.price * this.nums
-            }
-        },
-        parentchangeconten: {
-            get:function() {
-                return this.changeconten
             }
         }
     },
@@ -49,7 +50,18 @@ export default {
             if(this.nums <= 1) {
                 this.nums = 1
             }
-        }   
+        },
+        clickme:function(){
+            this.$emit('clickfather')
+        }
+    },
+    watch:{
+        changeinput:function(val){
+            this.changeinput2 = val
+        },
+        changeinput2:function(val){
+            this.changeinput = val
+        }
     }
 }
 </script>
